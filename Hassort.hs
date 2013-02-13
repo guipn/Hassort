@@ -22,7 +22,8 @@ insertionSort list = insert (head list) (insertionSort (tail list))
 
 
 mergeSort :: (Ord a) => [a] -> [a]
-mergeSort [x]   = [x]
+mergeSort []   = []
+mergeSort [x]  = [x]
 mergeSort list = merge (sort left) (sort right)
                     where left  = take half list
                           right = drop half list
